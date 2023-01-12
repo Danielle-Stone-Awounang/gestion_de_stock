@@ -1,0 +1,12 @@
+E:\personnel\projets\Gerer_mon_stock\Gerer_mon_stock\bin\Debug\Gerer_mon_stock.exe.config
+E:\personnel\projets\Gerer_mon_stock\Gerer_mon_stock\bin\Debug\Gerer_mon_stock.exe
+E:\personnel\projets\Gerer_mon_stock\Gerer_mon_stock\bin\Debug\Gerer_mon_stock.pdb
+E:\personnel\projets\Gerer_mon_stock\Gerer_mon_stock\obj\Debug\Gerer_mon_stock.csproj.AssemblyReference.cache
+E:\personnel\projets\Gerer_mon_stock\Gerer_mon_stock\obj\Debug\Gerer_mon_stock.csproj.SuggestedBindingRedirects.cache
+E:\personnel\projets\Gerer_mon_stock\Gerer_mon_stock\obj\Debug\Gerer_mon_stock.PL.form_menu.resources
+E:\personnel\projets\Gerer_mon_stock\Gerer_mon_stock\obj\Debug\Gerer_mon_stock.Properties.Resources.resources
+E:\personnel\projets\Gerer_mon_stock\Gerer_mon_stock\obj\Debug\Gerer_mon_stock.csproj.GenerateResource.cache
+E:\personnel\projets\Gerer_mon_stock\Gerer_mon_stock\obj\Debug\Gerer_mon_stock.csproj.CoreCompileInputs.cache
+E:\personnel\projets\Gerer_mon_stock\Gerer_mon_stock\obj\Debug\Gerer_mon_stock.exe
+E:\personnel\projets\Gerer_mon_stock\Gerer_mon_stock\obj\Debug\Gerer_mon_stock.pdb
+E:\personnel\projets\Gerer_mon_stock\Gerer_mon_stock\obj\Debug\Gerer_mon_stock.PL.form.resources
