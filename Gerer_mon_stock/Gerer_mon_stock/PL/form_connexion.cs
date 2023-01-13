@@ -35,10 +35,10 @@ namespace Gerer_mon_stock.PL
                 txt_nom_user.Text = "";
                 txt_nom_user.ForeColor = Color.White;
             }
-            else if (txt_mot_de_passe.Text == "")
+            else if (txt_nom_user.Text == "")
             {
-                txt_mot_de_passe.Text = "Mot de passe";
-                txt_mot_de_passe.ForeColor = Color.Silver;
+                txt_nom_user.Text = "Nom d'utilisateur";
+                txt_nom_user.ForeColor = Color.Silver;
             }
         }
 
