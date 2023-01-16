@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="gestionDeStockModelStoreContainer" CdmEntityContainer="dbStockContext">
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="gestionDeStockModel.Categorie">
+        <MappingFragment StoreEntitySet="Categorie">
+          <ScalarProperty Name="id_categorie" ColumnName="id_categorie" />
+          <ScalarProperty Name="nom_categorie" ColumnName="nom_categorie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="gestionDeStockModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="id_client" ColumnName="id_client" />
+          <ScalarProperty Name="nom_client" ColumnName="nom_client" />
+          <ScalarProperty Name="prenom_client" ColumnName="prenom_client" />
+          <ScalarProperty Name="adresse_client" ColumnName="adresse_client" />
+          <ScalarProperty Name="telephone_client" ColumnName="telephone_client" />
+          <ScalarProperty Name="pays_client" ColumnName="pays_client" />
+          <ScalarProperty Name="ville_client" ColumnName="ville_client" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Commandes">
+      <EntityTypeMapping TypeName="gestionDeStockModel.Commande">
+        <MappingFragment StoreEntitySet="Commande">
+          <ScalarProperty Name="id_commnade" ColumnName="id_commnade" />
+          <ScalarProperty Name="date_commande" ColumnName="date_commande" />
+          <ScalarProperty Name="id_client" ColumnName="id_client" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Produits">
+      <EntityTypeMapping TypeName="gestionDeStockModel.Produit">
+        <MappingFragment StoreEntitySet="Produit">
+          <ScalarProperty Name="id_produit" ColumnName="id_produit" />
+          <ScalarProperty Name="nom_produit" ColumnName="nom_produit" />
+          <ScalarProperty Name="quantite_produit" ColumnName="quantite_produit" />
+          <ScalarProperty Name="image_produit" ColumnName="image_produit" />
+          <ScalarProperty Name="id_categorie" ColumnName="id_categorie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="gestionDeStockModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="nom_utilisateur" ColumnName="nom_utilisateur" />
+          <ScalarProperty Name="mot_de_passe" ColumnName="mot_de_passe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Details_commande">
+      <EntityTypeMapping TypeName="gestionDeStockModel.Details_commande">
+        <MappingFragment StoreEntitySet="Details_commande">
+          <ScalarProperty Name="id_commande" ColumnName="id_commande" />
+          <ScalarProperty Name="id_produit" ColumnName="id_produit" />
+          <ScalarProperty Name="quantite" ColumnName="quantite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
