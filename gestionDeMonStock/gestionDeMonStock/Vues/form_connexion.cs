@@ -7,19 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using gestionDeMonStock.Controlers;
 
 namespace gestionDeMonStock
 {
     public partial class form_connexion : Form
     {
-        public dbStockContext db;
-        BL.class_connexion conn = new BL.class_connexion();
         private Form formMenu;
+        public controleur_utilisateur controleurUtilisateur;
         public form_connexion(Form menu)
         {
             InitializeComponent();
-            db = new dbStockContext();
             formMenu = menu;
+            controleurUtilisateur = new controleur_utilisateur();
         }
 
         //verifier les champs obligatoires
@@ -92,7 +92,7 @@ namespace gestionDeMonStock
         {
             if(testObligatoire() == null)
             {
-               if(conn.connexionIsValide(db,txt_nom_utilisateur.Text,txt_mot_de_passe.Text) == true)
+               if(controleurUtilisateur.connexionIsValide(txt_nom_utilisateur.Text,txt_mot_de_passe.Text) == true)
                 {
                     MessageBox.Show("connexion réussit","connexion",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
                     (formMenu as form_menu).activerForm();

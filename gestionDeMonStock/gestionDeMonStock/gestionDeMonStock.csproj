@@ -65,6 +65,10 @@
     <Compile Include="Commande.cs">
       <DependentUpon>DBstock.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controlers\controleur_client.cs" />
+    <Compile Include="Controlers\controleur_utilisateur.cs" />
+    <Compile Include="DAL\dal_client.cs" />
+    <Compile Include="DAL\dal_utilisateur.cs" />
     <Compile Include="DBstock.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -83,6 +87,8 @@
     <Compile Include="Details_commande.cs">
       <DependentUpon>DBstock.tt</DependentUpon>
     </Compile>
+    <Compile Include="Services\service_client.cs" />
+    <Compile Include="Services\service_utilisateur.cs" />
     <Compile Include="Vues\form_connexion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,10 +190,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controlers\" />
-    <Folder Include="DAL\" />
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
