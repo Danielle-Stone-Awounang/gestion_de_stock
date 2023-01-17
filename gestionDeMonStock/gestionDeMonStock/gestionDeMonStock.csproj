@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\class_connexion.cs" />
     <Compile Include="Categorie.cs">
       <DependentUpon>DBstock.tt</DependentUpon>
     </Compile>
@@ -82,16 +83,16 @@
     <Compile Include="Details_commande.cs">
       <DependentUpon>DBstock.tt</DependentUpon>
     </Compile>
-    <Compile Include="PL\form_connexion.cs">
+    <Compile Include="Vues\form_connexion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\form_connexion.Designer.cs">
+    <Compile Include="Vues\form_connexion.Designer.cs">
       <DependentUpon>form_connexion.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\form_menu.cs">
+    <Compile Include="Vues\form_menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\form_menu.Designer.cs">
+    <Compile Include="Vues\form_menu.Designer.cs">
       <DependentUpon>form_menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Produit.cs">
@@ -102,10 +103,16 @@
     <Compile Include="User.cs">
       <DependentUpon>DBstock.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="PL\form_connexion.resx">
+    <Compile Include="Vues\user_liste_client.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vues\user_liste_client.Designer.cs">
+      <DependentUpon>user_liste_client.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Vues\form_connexion.resx">
       <DependentUpon>form_connexion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\form_menu.resx">
+    <EmbeddedResource Include="Vues\form_menu.resx">
       <DependentUpon>form_menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -118,6 +125,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Vues\user_liste_client.resx">
+      <DependentUpon>user_liste_client.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="DBstock.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DBstock.Designer.cs</LastGenOutput>
@@ -150,6 +160,9 @@
       <DependentUpon>DBstock.edmx</DependentUpon>
       <LastGenOutput>DBstock.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\delete2_48px.png" />
+    <None Include="Resources\available_updates_48px.png" />
+    <None Include="Resources\plus_math_48px.png" />
     <None Include="Resources\password_24px.png" />
     <None Include="Resources\user_24px.png" />
     <None Include="Resources\close_window_48px.png" />
@@ -172,7 +185,9 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DL\" />
+    <Folder Include="Controlers\" />
+    <Folder Include="DAL\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

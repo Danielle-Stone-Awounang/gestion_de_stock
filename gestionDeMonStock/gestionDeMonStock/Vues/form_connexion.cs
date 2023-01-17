@@ -12,9 +12,14 @@ namespace gestionDeMonStock
 {
     public partial class form_connexion : Form
     {
-        public form_connexion()
+        public dbStockContext db;
+        BL.class_connexion conn = new BL.class_connexion();
+        private Form formMenu;
+        public form_connexion(Form menu)
         {
             InitializeComponent();
+            db = new dbStockContext();
+            formMenu = menu;
         }
 
         //verifier les champs obligatoires
@@ -58,6 +63,8 @@ namespace gestionDeMonStock
             if (txt_mot_de_passe.Text == "Mot de passe")
             {
                 txt_mot_de_passe.Text = "";
+                txt_mot_de_passe.UseSystemPasswordChar = false;
+                txt_mot_de_passe.PasswordChar = '*';
                 txt_mot_de_passe.ForeColor = Color.White;
             }
         }
@@ -77,6 +84,7 @@ namespace gestionDeMonStock
             {
                 txt_mot_de_passe.ForeColor= Color.Silver;
                 txt_mot_de_passe.Text = "Mot de passe";
+                txt_mot_de_passe.UseSystemPasswordChar =true;
             }
         }
 
@@ -84,7 +92,16 @@ namespace gestionDeMonStock
         {
             if(testObligatoire() == null)
             {
-                MessageBox.Show("validé");
+               if(conn.connexionIsValide(db,txt_nom_utilisateur.Text,txt_mot_de_passe.Text) == true)
+                {
+                    MessageBox.Show("connexion réussit","connexion",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
+                    (formMenu as form_menu).activerForm();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("connexion échoué!", "connexion", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
             }
             else
             {

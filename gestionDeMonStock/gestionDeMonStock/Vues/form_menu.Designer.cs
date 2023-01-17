@@ -39,13 +39,14 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelParametre = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_deconnecter = new System.Windows.Forms.Button();
+            this.btn_restaurer = new System.Windows.Forms.Button();
+            this.btn_copier = new System.Windows.Forms.Button();
+            this.btn_connecter = new System.Windows.Forms.Button();
             this.btn_parametre = new System.Windows.Forms.Button();
             this.btn_minimize = new System.Windows.Forms.Button();
             this.btn_fermer = new System.Windows.Forms.Button();
+            this.panelAfficher = new System.Windows.Forms.Panel();
             this.panel_menu.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panelParametre.SuspendLayout();
@@ -175,6 +176,7 @@
             // panelMain
             // 
             this.panelMain.Controls.Add(this.panelParametre);
+            this.panelMain.Controls.Add(this.panelAfficher);
             this.panelMain.Controls.Add(this.btn_parametre);
             this.panelMain.Controls.Add(this.btn_minimize);
             this.panelMain.Controls.Add(this.btn_fermer);
@@ -188,75 +190,76 @@
             // panelParametre
             // 
             this.panelParametre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.panelParametre.Controls.Add(this.button4);
-            this.panelParametre.Controls.Add(this.button3);
-            this.panelParametre.Controls.Add(this.button2);
-            this.panelParametre.Controls.Add(this.button1);
-            this.panelParametre.Location = new System.Drawing.Point(36, 6);
+            this.panelParametre.Controls.Add(this.btn_deconnecter);
+            this.panelParametre.Controls.Add(this.btn_restaurer);
+            this.panelParametre.Controls.Add(this.btn_copier);
+            this.panelParametre.Controls.Add(this.btn_connecter);
+            this.panelParametre.Location = new System.Drawing.Point(36, 0);
             this.panelParametre.Name = "panelParametre";
-            this.panelParametre.Size = new System.Drawing.Size(400, 228);
+            this.panelParametre.Size = new System.Drawing.Size(400, 53);
             this.panelParametre.TabIndex = 10;
             // 
-            // button4
+            // btn_deconnecter
             // 
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Lucida Calligraphy", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = global::gestionDeMonStock.Properties.Resources.shutdown_24px;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(0, 146);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(400, 43);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "déconnecter";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_deconnecter.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.btn_deconnecter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.btn_deconnecter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_deconnecter.Font = new System.Drawing.Font("Lucida Calligraphy", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_deconnecter.Image = global::gestionDeMonStock.Properties.Resources.shutdown_24px;
+            this.btn_deconnecter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_deconnecter.Location = new System.Drawing.Point(0, 146);
+            this.btn_deconnecter.Name = "btn_deconnecter";
+            this.btn_deconnecter.Size = new System.Drawing.Size(400, 43);
+            this.btn_deconnecter.TabIndex = 9;
+            this.btn_deconnecter.Text = "déconnecter";
+            this.btn_deconnecter.UseVisualStyleBackColor = true;
+            this.btn_deconnecter.Click += new System.EventHandler(this.btn_deconnecter_Click);
             // 
-            // button3
+            // btn_restaurer
             // 
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Lucida Calligraphy", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = global::gestionDeMonStock.Properties.Resources.cloud_backup_restore_24px;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 97);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(400, 43);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "restaurer une copie enregistrée";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_restaurer.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.btn_restaurer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.btn_restaurer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_restaurer.Font = new System.Drawing.Font("Lucida Calligraphy", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_restaurer.Image = global::gestionDeMonStock.Properties.Resources.cloud_backup_restore_24px;
+            this.btn_restaurer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_restaurer.Location = new System.Drawing.Point(0, 97);
+            this.btn_restaurer.Name = "btn_restaurer";
+            this.btn_restaurer.Size = new System.Drawing.Size(400, 43);
+            this.btn_restaurer.TabIndex = 8;
+            this.btn_restaurer.Text = "restaurer une copie enregistrée";
+            this.btn_restaurer.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btn_copier
             // 
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Lucida Calligraphy", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::gestionDeMonStock.Properties.Resources.import_24px;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 48);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(400, 43);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "   creer une copie de l\'application";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_copier.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.btn_copier.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.btn_copier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_copier.Font = new System.Drawing.Font("Lucida Calligraphy", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_copier.Image = global::gestionDeMonStock.Properties.Resources.import_24px;
+            this.btn_copier.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_copier.Location = new System.Drawing.Point(0, 48);
+            this.btn_copier.Name = "btn_copier";
+            this.btn_copier.Size = new System.Drawing.Size(400, 43);
+            this.btn_copier.TabIndex = 7;
+            this.btn_copier.Text = "   creer une copie de l\'application";
+            this.btn_copier.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btn_connecter
             // 
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Lucida Calligraphy", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::gestionDeMonStock.Properties.Resources.connect_24px;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(400, 42);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "   connecter";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_connecter.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.btn_connecter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.btn_connecter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_connecter.Font = new System.Drawing.Font("Lucida Calligraphy", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_connecter.Image = global::gestionDeMonStock.Properties.Resources.connect_24px;
+            this.btn_connecter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_connecter.Location = new System.Drawing.Point(0, 0);
+            this.btn_connecter.Name = "btn_connecter";
+            this.btn_connecter.Size = new System.Drawing.Size(400, 42);
+            this.btn_connecter.TabIndex = 6;
+            this.btn_connecter.Text = "   connecter";
+            this.btn_connecter.UseVisualStyleBackColor = true;
+            this.btn_connecter.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_parametre
             // 
@@ -296,6 +299,16 @@
             this.btn_fermer.UseVisualStyleBackColor = true;
             this.btn_fermer.Click += new System.EventHandler(this.btn_fermer_Click);
             // 
+            // panelAfficher
+            // 
+            this.panelAfficher.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelAfficher.Location = new System.Drawing.Point(0, 59);
+            this.panelAfficher.Name = "panelAfficher";
+            this.panelAfficher.Size = new System.Drawing.Size(517, 422);
+            this.panelAfficher.TabIndex = 11;
+            // 
             // form_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 24F);
@@ -311,6 +324,7 @@
             this.Name = "form_menu";
             this.Text = "form_menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.form_menu_Load);
             this.panel_menu.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
             this.panelParametre.ResumeLayout(false);
@@ -334,9 +348,10 @@
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Button btn_parametre;
         private System.Windows.Forms.Panel panelParametre;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_connecter;
+        private System.Windows.Forms.Button btn_deconnecter;
+        private System.Windows.Forms.Button btn_restaurer;
+        private System.Windows.Forms.Button btn_copier;
+        private System.Windows.Forms.Panel panelAfficher;
     }
 }

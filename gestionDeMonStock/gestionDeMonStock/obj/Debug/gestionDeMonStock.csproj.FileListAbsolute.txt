@@ -16,3 +16,4 @@ E:\personnel\projets\gestion_de_stock\gestionDeMonStock\gestionDeMonStock\obj\De
 E:\personnel\projets\gestion_de_stock\gestionDeMonStock\gestionDeMonStock\obj\Debug\gestionDeMonStock.exe
 E:\personnel\projets\gestion_de_stock\gestionDeMonStock\gestionDeMonStock\obj\Debug\gestionDeMonStock.pdb
 E:\personnel\projets\gestion_de_stock\gestionDeMonStock\gestionDeMonStock\obj\Debug\gestionDeMonStock.form_connexion.resources
+E:\personnel\projets\gestion_de_stock\gestionDeMonStock\gestionDeMonStock\obj\Debug\gestionDeMonStock.Vues.user_liste_client.resources

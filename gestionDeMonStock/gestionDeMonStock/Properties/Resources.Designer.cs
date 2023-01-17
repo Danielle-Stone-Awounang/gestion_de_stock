@@ -63,6 +63,16 @@ namespace gestionDeMonStock.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap available_updates_48px {
+            get {
+                object obj = ResourceManager.GetObject("available_updates_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap categorize_48px {
             get {
                 object obj = ResourceManager.GetObject("categorize_48px", resourceCulture);
@@ -133,6 +143,16 @@ namespace gestionDeMonStock.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap delete2_48px {
+            get {
+                object obj = ResourceManager.GetObject("delete2_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap import_24px {
             get {
                 object obj = ResourceManager.GetObject("import_24px", resourceCulture);
@@ -166,6 +186,16 @@ namespace gestionDeMonStock.Properties {
         internal static System.Drawing.Bitmap password_24px {
             get {
                 object obj = ResourceManager.GetObject("password_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus_math_48px {
+            get {
+                object obj = ResourceManager.GetObject("plus_math_48px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
