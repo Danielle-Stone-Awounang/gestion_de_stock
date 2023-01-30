@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_client = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_menu = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn_client = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.btn_menu = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -58,44 +58,47 @@
             this.panel1.Size = new System.Drawing.Size(239, 524);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // btn_menu
             // 
-            this.panel2.BackColor = System.Drawing.Color.Maroon;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(239, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(561, 10);
-            this.panel2.TabIndex = 1;
+            this.btn_menu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_menu.FlatAppearance.BorderSize = 0;
+            this.btn_menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_menu.Image = global::Gestion_de_mon_stock.Properties.Resources.menu_16px;
+            this.btn_menu.Location = new System.Drawing.Point(203, 12);
+            this.btn_menu.Name = "btn_menu";
+            this.btn_menu.Size = new System.Drawing.Size(33, 23);
+            this.btn_menu.TabIndex = 4;
+            this.btn_menu.UseVisualStyleBackColor = true;
             // 
-            // btn_client
+            // button4
             // 
-            this.btn_client.FlatAppearance.BorderSize = 0;
-            this.btn_client.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_client.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_client.ForeColor = System.Drawing.Color.White;
-            this.btn_client.Image = global::Gestion_de_mon_stock.Properties.Resources.user_48px;
-            this.btn_client.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_client.Location = new System.Drawing.Point(16, 141);
-            this.btn_client.Name = "btn_client";
-            this.btn_client.Size = new System.Drawing.Size(223, 49);
-            this.btn_client.TabIndex = 2;
-            this.btn_client.Text = "client";
-            this.btn_client.UseVisualStyleBackColor = true;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Image = global::Gestion_de_mon_stock.Properties.Resources.user_shield_48px;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(16, 412);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(223, 49);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "utilisateur";
+            this.button4.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // button3
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::Gestion_de_mon_stock.Properties.Resources.clear_shopping_cart_40px;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(16, 206);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(223, 49);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "produit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Image = global::Gestion_de_mon_stock.Properties.Resources.categorize_48px;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(16, 343);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(223, 49);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "categorie";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -113,35 +116,44 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // button1
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = global::Gestion_de_mon_stock.Properties.Resources.categorize_48px;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(16, 343);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(223, 49);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "categorie";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::Gestion_de_mon_stock.Properties.Resources.clear_shopping_cart_40px;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(16, 206);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(223, 49);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "produit";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btn_client
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = global::Gestion_de_mon_stock.Properties.Resources.user_shield_48px;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(16, 412);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(223, 49);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "utilisateur";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_client.FlatAppearance.BorderSize = 0;
+            this.btn_client.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_client.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_client.ForeColor = System.Drawing.Color.White;
+            this.btn_client.Image = global::Gestion_de_mon_stock.Properties.Resources.user_48px;
+            this.btn_client.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_client.Location = new System.Drawing.Point(16, 141);
+            this.btn_client.Name = "btn_client";
+            this.btn_client.Size = new System.Drawing.Size(223, 49);
+            this.btn_client.TabIndex = 2;
+            this.btn_client.Text = "client";
+            this.btn_client.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Maroon;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(239, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(561, 10);
+            this.panel2.TabIndex = 1;
             // 
             // button5
             // 
@@ -168,18 +180,6 @@
             this.button6.TabIndex = 3;
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // btn_menu
-            // 
-            this.btn_menu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_menu.FlatAppearance.BorderSize = 0;
-            this.btn_menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_menu.Image = global::Gestion_de_mon_stock.Properties.Resources.menu_16px;
-            this.btn_menu.Location = new System.Drawing.Point(203, 12);
-            this.btn_menu.Name = "btn_menu";
-            this.btn_menu.Size = new System.Drawing.Size(33, 23);
-            this.btn_menu.TabIndex = 4;
-            this.btn_menu.UseVisualStyleBackColor = true;
-            // 
             // button8
             // 
             this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -203,6 +203,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IsMdiContainer = true;
             this.Name = "form_menu";
             this.Text = "form_menu";
             this.panel1.ResumeLayout(false);

@@ -18,6 +18,7 @@
     <Property Name="telephone_client" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="pays_client" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="ville_client" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email_client" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Commande">
     <Key>

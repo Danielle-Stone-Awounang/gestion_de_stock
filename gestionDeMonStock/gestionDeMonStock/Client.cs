@@ -27,6 +27,7 @@ namespace gestionDeMonStock
         public string telephone_client { get; set; }
         public string pays_client { get; set; }
         public string ville_client { get; set; }
+        public string email_client { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Commande> Commandes { get; set; }

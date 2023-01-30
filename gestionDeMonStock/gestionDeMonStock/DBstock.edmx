@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="gestionDeStockModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="gestionDeStockModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Categorie">
           <Key>
             <PropertyRef Name="id_categorie" />
@@ -23,6 +23,7 @@
           <Property Name="telephone_client" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="pays_client" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ville_client" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="email_client" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Commande">
           <Key>
@@ -138,31 +139,55 @@ avertissement 6002: La table/vue 'gestionDeStock.dbo.Details_commande' n'a pas d
             <End Role="Produit" EntitySet="Produit" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="gestionDeStockModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="dbStockContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Categories" EntityType="gestionDeStockModel.Categorie" />
+          <EntitySet Name="Clients" EntityType="gestionDeStockModel.Client" />
+          <EntitySet Name="Commandes" EntityType="gestionDeStockModel.Commande" />
+          <EntitySet Name="Produits" EntityType="gestionDeStockModel.Produit" />
+          <EntitySet Name="Users" EntityType="gestionDeStockModel.User" />
+          <EntitySet Name="Details_commande" EntityType="gestionDeStockModel.Details_commande" />
+          <AssociationSet Name="FK_Produit_Categorie" Association="gestionDeStockModel.FK_Produit_Categorie">
+            <End Role="Categorie" EntitySet="Categories" />
+            <End Role="Produit" EntitySet="Produits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Commande_Client" Association="gestionDeStockModel.FK_Commande_Client">
+            <End Role="Client" EntitySet="Clients" />
+            <End Role="Commande" EntitySet="Commandes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Details_commande_Commande" Association="gestionDeStockModel.FK_Details_commande_Commande">
+            <End Role="Commande" EntitySet="Commandes" />
+            <End Role="Details_commande" EntitySet="Details_commande" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Details_commande_Produit" Association="gestionDeStockModel.FK_Details_commande_Produit">
+            <End Role="Produit" EntitySet="Produits" />
+            <End Role="Details_commande" EntitySet="Details_commande" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="Categorie">
           <Key>
             <PropertyRef Name="id_categorie" />
           </Key>
           <Property Name="id_categorie" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nom_categorie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Produits" Relationship="Self.FK_Produit_Categorie" FromRole="Categorie" ToRole="Produit" />
+          <Property Name="nom_categorie" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Produits" Relationship="gestionDeStockModel.FK_Produit_Categorie" FromRole="Categorie" ToRole="Produit" />
         </EntityType>
         <EntityType Name="Client">
           <Key>
             <PropertyRef Name="id_client" />
           </Key>
           <Property Name="id_client" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nom_client" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="prenom_client" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="adresse_client" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="telephone_client" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="pays_client" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ville_client" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Commandes" Relationship="Self.FK_Commande_Client" FromRole="Client" ToRole="Commande" />
+          <Property Name="nom_client" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="prenom_client" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="adresse_client" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="telephone_client" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pays_client" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ville_client" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email_client" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Commandes" Relationship="gestionDeStockModel.FK_Commande_Client" FromRole="Client" ToRole="Commande" />
         </EntityType>
         <EntityType Name="Commande">
           <Key>
@@ -171,27 +196,27 @@ avertissement 6002: La table/vue 'gestionDeStock.dbo.Details_commande' n'a pas d
           <Property Name="id_commnade" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="date_commande" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="id_client" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Client" Relationship="Self.FK_Commande_Client" FromRole="Commande" ToRole="Client" />
-          <NavigationProperty Name="Details_commande" Relationship="Self.FK_Details_commande_Commande" FromRole="Commande" ToRole="Details_commande" />
+          <NavigationProperty Name="Client" Relationship="gestionDeStockModel.FK_Commande_Client" FromRole="Commande" ToRole="Client" />
+          <NavigationProperty Name="Details_commande" Relationship="gestionDeStockModel.FK_Details_commande_Commande" FromRole="Commande" ToRole="Details_commande" />
         </EntityType>
         <EntityType Name="Produit">
           <Key>
             <PropertyRef Name="id_produit" />
           </Key>
           <Property Name="id_produit" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nom_produit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="nom_produit" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="quantite_produit" Type="Int32" Nullable="false" />
-          <Property Name="image_produit" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="image_produit" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
           <Property Name="id_categorie" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Categorie" Relationship="Self.FK_Produit_Categorie" FromRole="Produit" ToRole="Categorie" />
-          <NavigationProperty Name="Details_commande" Relationship="Self.FK_Details_commande_Produit" FromRole="Produit" ToRole="Details_commande" />
+          <NavigationProperty Name="Categorie" Relationship="gestionDeStockModel.FK_Produit_Categorie" FromRole="Produit" ToRole="Categorie" />
+          <NavigationProperty Name="Details_commande" Relationship="gestionDeStockModel.FK_Details_commande_Produit" FromRole="Produit" ToRole="Details_commande" />
         </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="nom_utilisateur" />
           </Key>
-          <Property Name="nom_utilisateur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="mot_de_passe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="nom_utilisateur" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="mot_de_passe" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Details_commande">
           <Key>
@@ -201,12 +226,12 @@ avertissement 6002: La table/vue 'gestionDeStock.dbo.Details_commande' n'a pas d
           <Property Name="id_commande" Type="Int32" Nullable="false" />
           <Property Name="id_produit" Type="Int32" Nullable="false" />
           <Property Name="quantite" Type="Int32" />
-          <NavigationProperty Name="Commande" Relationship="Self.FK_Details_commande_Commande" FromRole="Details_commande" ToRole="Commande" />
-          <NavigationProperty Name="Produit" Relationship="Self.FK_Details_commande_Produit" FromRole="Details_commande" ToRole="Produit" />
+          <NavigationProperty Name="Commande" Relationship="gestionDeStockModel.FK_Details_commande_Commande" FromRole="Details_commande" ToRole="Commande" />
+          <NavigationProperty Name="Produit" Relationship="gestionDeStockModel.FK_Details_commande_Produit" FromRole="Details_commande" ToRole="Produit" />
         </EntityType>
         <Association Name="FK_Produit_Categorie">
-          <End Role="Categorie" Type="Self.Categorie" Multiplicity="1" />
-          <End Role="Produit" Type="Self.Produit" Multiplicity="*" />
+          <End Type="gestionDeStockModel.Categorie" Role="Categorie" Multiplicity="1" />
+          <End Type="gestionDeStockModel.Produit" Role="Produit" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Categorie">
               <PropertyRef Name="id_categorie" />
@@ -217,8 +242,8 @@ avertissement 6002: La table/vue 'gestionDeStock.dbo.Details_commande' n'a pas d
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Commande_Client">
-          <End Role="Client" Type="Self.Client" Multiplicity="1" />
-          <End Role="Commande" Type="Self.Commande" Multiplicity="*" />
+          <End Type="gestionDeStockModel.Client" Role="Client" Multiplicity="1" />
+          <End Type="gestionDeStockModel.Commande" Role="Commande" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Client">
               <PropertyRef Name="id_client" />
@@ -229,8 +254,8 @@ avertissement 6002: La table/vue 'gestionDeStock.dbo.Details_commande' n'a pas d
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Details_commande_Commande">
-          <End Role="Commande" Type="Self.Commande" Multiplicity="1" />
-          <End Role="Details_commande" Type="Self.Details_commande" Multiplicity="*" />
+          <End Type="gestionDeStockModel.Commande" Role="Commande" Multiplicity="1" />
+          <End Type="gestionDeStockModel.Details_commande" Role="Details_commande" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Commande">
               <PropertyRef Name="id_commnade" />
@@ -241,8 +266,8 @@ avertissement 6002: La table/vue 'gestionDeStock.dbo.Details_commande' n'a pas d
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Details_commande_Produit">
-          <End Role="Produit" Type="Self.Produit" Multiplicity="1" />
-          <End Role="Details_commande" Type="Self.Details_commande" Multiplicity="*" />
+          <End Type="gestionDeStockModel.Produit" Role="Produit" Multiplicity="1" />
+          <End Type="gestionDeStockModel.Details_commande" Role="Details_commande" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Produit">
               <PropertyRef Name="id_produit" />
@@ -252,30 +277,6 @@ avertissement 6002: La table/vue 'gestionDeStock.dbo.Details_commande' n'a pas d
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="dbStockContext" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Categories" EntityType="Self.Categorie" />
-          <EntitySet Name="Clients" EntityType="Self.Client" />
-          <EntitySet Name="Commandes" EntityType="Self.Commande" />
-          <EntitySet Name="Produits" EntityType="Self.Produit" />
-          <EntitySet Name="Users" EntityType="Self.User" />
-          <EntitySet Name="Details_commande" EntityType="Self.Details_commande" />
-          <AssociationSet Name="FK_Produit_Categorie" Association="Self.FK_Produit_Categorie">
-            <End Role="Categorie" EntitySet="Categories" />
-            <End Role="Produit" EntitySet="Produits" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Commande_Client" Association="Self.FK_Commande_Client">
-            <End Role="Client" EntitySet="Clients" />
-            <End Role="Commande" EntitySet="Commandes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Details_commande_Commande" Association="Self.FK_Details_commande_Commande">
-            <End Role="Commande" EntitySet="Commandes" />
-            <End Role="Details_commande" EntitySet="Details_commande" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Details_commande_Produit" Association="Self.FK_Details_commande_Produit">
-            <End Role="Produit" EntitySet="Produits" />
-            <End Role="Details_commande" EntitySet="Details_commande" />
-          </AssociationSet>
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -285,58 +286,59 @@ avertissement 6002: La table/vue 'gestionDeStock.dbo.Details_commande' n'a pas d
           <EntitySetMapping Name="Categories">
             <EntityTypeMapping TypeName="gestionDeStockModel.Categorie">
               <MappingFragment StoreEntitySet="Categorie">
-                <ScalarProperty Name="id_categorie" ColumnName="id_categorie" />
                 <ScalarProperty Name="nom_categorie" ColumnName="nom_categorie" />
+                <ScalarProperty Name="id_categorie" ColumnName="id_categorie" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Clients">
             <EntityTypeMapping TypeName="gestionDeStockModel.Client">
               <MappingFragment StoreEntitySet="Client">
-                <ScalarProperty Name="id_client" ColumnName="id_client" />
-                <ScalarProperty Name="nom_client" ColumnName="nom_client" />
-                <ScalarProperty Name="prenom_client" ColumnName="prenom_client" />
-                <ScalarProperty Name="adresse_client" ColumnName="adresse_client" />
-                <ScalarProperty Name="telephone_client" ColumnName="telephone_client" />
-                <ScalarProperty Name="pays_client" ColumnName="pays_client" />
+                <ScalarProperty Name="email_client" ColumnName="email_client" />
                 <ScalarProperty Name="ville_client" ColumnName="ville_client" />
+                <ScalarProperty Name="pays_client" ColumnName="pays_client" />
+                <ScalarProperty Name="telephone_client" ColumnName="telephone_client" />
+                <ScalarProperty Name="adresse_client" ColumnName="adresse_client" />
+                <ScalarProperty Name="prenom_client" ColumnName="prenom_client" />
+                <ScalarProperty Name="nom_client" ColumnName="nom_client" />
+                <ScalarProperty Name="id_client" ColumnName="id_client" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Commandes">
             <EntityTypeMapping TypeName="gestionDeStockModel.Commande">
               <MappingFragment StoreEntitySet="Commande">
-                <ScalarProperty Name="id_commnade" ColumnName="id_commnade" />
-                <ScalarProperty Name="date_commande" ColumnName="date_commande" />
                 <ScalarProperty Name="id_client" ColumnName="id_client" />
+                <ScalarProperty Name="date_commande" ColumnName="date_commande" />
+                <ScalarProperty Name="id_commnade" ColumnName="id_commnade" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Produits">
             <EntityTypeMapping TypeName="gestionDeStockModel.Produit">
               <MappingFragment StoreEntitySet="Produit">
-                <ScalarProperty Name="id_produit" ColumnName="id_produit" />
-                <ScalarProperty Name="nom_produit" ColumnName="nom_produit" />
-                <ScalarProperty Name="quantite_produit" ColumnName="quantite_produit" />
-                <ScalarProperty Name="image_produit" ColumnName="image_produit" />
                 <ScalarProperty Name="id_categorie" ColumnName="id_categorie" />
+                <ScalarProperty Name="image_produit" ColumnName="image_produit" />
+                <ScalarProperty Name="quantite_produit" ColumnName="quantite_produit" />
+                <ScalarProperty Name="nom_produit" ColumnName="nom_produit" />
+                <ScalarProperty Name="id_produit" ColumnName="id_produit" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="gestionDeStockModel.User">
               <MappingFragment StoreEntitySet="User">
-                <ScalarProperty Name="nom_utilisateur" ColumnName="nom_utilisateur" />
                 <ScalarProperty Name="mot_de_passe" ColumnName="mot_de_passe" />
+                <ScalarProperty Name="nom_utilisateur" ColumnName="nom_utilisateur" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Details_commande">
             <EntityTypeMapping TypeName="gestionDeStockModel.Details_commande">
               <MappingFragment StoreEntitySet="Details_commande">
-                <ScalarProperty Name="id_commande" ColumnName="id_commande" />
-                <ScalarProperty Name="id_produit" ColumnName="id_produit" />
                 <ScalarProperty Name="quantite" ColumnName="quantite" />
+                <ScalarProperty Name="id_produit" ColumnName="id_produit" />
+                <ScalarProperty Name="id_commande" ColumnName="id_commande" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

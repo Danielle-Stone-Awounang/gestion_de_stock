@@ -1,0 +1,9 @@
+E:\personnel\projets\gestion_de_stock\Gestion_de_mon_stock\Gestion_de_mon_stock\obj\Debug\net6.0-windows\Gestion_de_mon_stock.csproj.AssemblyReference.cache
+E:\personnel\projets\gestion_de_stock\Gestion_de_mon_stock\Gestion_de_mon_stock\obj\Debug\net6.0-windows\Gestion_de_mon_stock.PL.formClient.resources
+E:\personnel\projets\gestion_de_stock\Gestion_de_mon_stock\Gestion_de_mon_stock\obj\Debug\net6.0-windows\Gestion_de_mon_stock.PL.form_menu.resources
+E:\personnel\projets\gestion_de_stock\Gestion_de_mon_stock\Gestion_de_mon_stock\obj\Debug\net6.0-windows\Gestion_de_mon_stock.Properties.Resources.resources
+E:\personnel\projets\gestion_de_stock\Gestion_de_mon_stock\Gestion_de_mon_stock\obj\Debug\net6.0-windows\Gestion_de_mon_stock.csproj.GenerateResource.cache
+E:\personnel\projets\gestion_de_stock\Gestion_de_mon_stock\Gestion_de_mon_stock\obj\Debug\net6.0-windows\Gestion_de_mon_stock.GeneratedMSBuildEditorConfig.editorconfig
+E:\personnel\projets\gestion_de_stock\Gestion_de_mon_stock\Gestion_de_mon_stock\obj\Debug\net6.0-windows\Gestion_de_mon_stock.AssemblyInfoInputs.cache
+E:\personnel\projets\gestion_de_stock\Gestion_de_mon_stock\Gestion_de_mon_stock\obj\Debug\net6.0-windows\Gestion_de_mon_stock.AssemblyInfo.cs
+E:\personnel\projets\gestion_de_stock\Gestion_de_mon_stock\Gestion_de_mon_stock\obj\Debug\net6.0-windows\Gestion_de_mon_stock.csproj.CoreCompileInputs.cache

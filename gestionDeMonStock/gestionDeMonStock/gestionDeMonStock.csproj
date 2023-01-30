@@ -89,6 +89,12 @@
     </Compile>
     <Compile Include="Services\service_client.cs" />
     <Compile Include="Services\service_utilisateur.cs" />
+    <Compile Include="Vues\Client\form_client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vues\Client\form_client.Designer.cs">
+      <DependentUpon>form_client.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vues\form_connexion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,12 +115,15 @@
     <Compile Include="User.cs">
       <DependentUpon>DBstock.tt</DependentUpon>
     </Compile>
-    <Compile Include="Vues\user_liste_client.cs">
+    <Compile Include="Vues\Client\user_liste_client.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Vues\user_liste_client.Designer.cs">
+    <Compile Include="Vues\Client\user_liste_client.Designer.cs">
       <DependentUpon>user_liste_client.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vues\Client\form_client.resx">
+      <DependentUpon>form_client.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vues\form_connexion.resx">
       <DependentUpon>form_connexion.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,7 +140,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Vues\user_liste_client.resx">
+    <EmbeddedResource Include="Vues\Client\user_liste_client.resx">
       <DependentUpon>user_liste_client.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="DBstock.edmx">

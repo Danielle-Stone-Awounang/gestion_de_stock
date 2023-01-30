@@ -60,5 +60,20 @@ namespace gestionDeMonStock.Vues
             dgv_client.Rows[0].Cells[3].Value = "stone@gmail.com";
 
         }
+
+        private void btn_ajouter_Click(object sender, EventArgs e)
+        {
+            form_client client = new form_client();
+            client.ShowDialog();
+        }
+
+        private void btn_modifier_Click(object sender, EventArgs e)
+        {
+            form_client client = new form_client();
+            client.label_titre.Text = "Modifier un client";
+            client.btn_actualiser.Visible = false;
+            client.btn_enregistrer.Location = new Point(224, 481);
+            client.ShowDialog();
+        }
     }
 }
